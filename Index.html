@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="id"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Dental Photo Guide&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg: #07111f;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--panel: #111f31;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--line: #36e5d0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--warn: #ffbf52;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text: #edf7ff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--muted: #a9bed0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>* { box-sizing: border-box; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.app {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: min(100%, 680px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 4px 0 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.toolbar {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>select, button {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>select {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #102030;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #04201e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>button.secondary {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #243b55;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.camera-box {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>aspect-ratio: 3 / 4;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #000;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #28445d;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>video, canvas, .guide {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inset: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>video {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>object-fit: cover;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>canvas {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.guide {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.vertical, .horizontal, .occlusal-line, .arch, .caption {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.vertical {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 8%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom: 8%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateX(-50%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: .9;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 8px var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.horizontal {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 11%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: 11%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 55%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 8px var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.frame {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 9%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: 9%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 24%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom: 24%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: .9;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.occlusal-line {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 10%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: 10%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top: 2px dashed var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.arch {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 16%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: 16%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 23%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom: 23%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 3px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 50% 50% 42% 42%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: .9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.arch.lower {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 30%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom: 16%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 42% 42% 50% 50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.caption {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 9px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(0, 0, 0, .55);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.status {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 12px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--panel);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.status strong { color: var(--line); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.actions {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 1.3fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.capture {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #13202e;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.preview {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.preview img {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--line);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hint {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.45;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;main class="app"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Dental Photo Guide&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="toolbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;select id="viewType"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="anterior"&gt;Anterior / Frontal&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="right"&gt;Buccal Kanan&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="left"&gt;Buccal Kiri&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="upper"&gt;Oklusal Maksila&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option value="lower"&gt;Oklusal Mandibula&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="startCamera"&gt;Aktifkan Kamera&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="camera-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;video id="video" autoplay playsinline&gt;&lt;/video&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;canvas id="canvas"&gt;&lt;/canvas&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="guide"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="frame"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="vertical"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="horizontal"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="occlusal-line"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="arch"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="caption"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="status"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span&gt;Template: &lt;strong id="templateName"&gt;Anterior&lt;/strong&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span id="levelStatus"&gt;Kemiringan: —&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="actions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="secondary" id="switchCamera"&gt;Ganti Kamera&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="capture" id="capture"&gt;Ambil Foto&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="secondary" id="download"&gt;Unduh&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="preview" id="preview"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img id="photoResult" alt="Hasil foto dental" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="hint"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Gunakan kamera belakang. Garis hijau membantu standardisasi posisi,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tetapi operator tetap harus memastikan retraktor, mirror, pencahayaan,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>dan seluruh area gigi yang relevan terlihat jelas.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const video = document.getElementById("video");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const canvas = document.getElementById("canvas");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const ctx = canvas.getContext("2d");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const viewType = document.getElementById("viewType");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const startCameraBtn = document.getElementById("startCamera");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const switchCameraBtn = document.getElementById("switchCamera");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const captureBtn = document.getElementById("capture");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const downloadBtn = document.getElementById("download");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const result = document.getElementById("photoResult");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const preview = document.getElementById("preview");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const frame = document.querySelector(".frame");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const vertical = document.querySelector(".vertical");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const horizontal = document.querySelector(".horizontal");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const occlusalLine = document.querySelector(".occlusal-line");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const arch = document.querySelector(".arch");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const caption = document.querySelector(".caption");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const templateName = document.getElementById("templateName");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const levelStatus = document.getElementById("levelStatus");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let stream = null;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let useBackCamera = true;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let photoData = null;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const templates = {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>anterior: {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "Anterior / Frontal",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Sejajarkan midline dengan garis vertikal dan bidang oklusal dengan garis horizontal.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>show: ["frame", "vertical", "horizontal"]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>right: {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "Buccal Kanan",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Pastikan oklusi dan area posterior terlihat; jaga bidang oklusal sejajar.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>show: ["frame", "horizontal"]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left: {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "Buccal Kiri",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Pastikan oklusi dan area posterior terlihat; jaga bidang oklusal sejajar.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>show: ["frame", "horizontal"]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>upper: {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "Oklusal Maksila",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Gunakan mirror; tempatkan midline dan lengkung rahang pada template.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>show: ["vertical", "occlusal", "arch"]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>lower: {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>name: "Oklusal Mandibula",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text: "Gunakan mirror; tempatkan midline dan lengkung rahang pada template.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>show: ["vertical", "occlusal", "arch", "lowerArch"]</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function updateGuide() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const t = templates[viewType.value];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>frame.style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>vertical.style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>horizontal.style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>occlusalLine.style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>arch.style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>arch.classList.remove("lower");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (t.show.includes("frame")) frame.style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (t.show.includes("vertical")) vertical.style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (t.show.includes("horizontal")) horizontal.style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (t.show.includes("occlusal")) occlusalLine.style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (t.show.includes("arch")) arch.style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (t.show.includes("lowerArch")) arch.classList.add("lower");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>caption.style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>caption.textContent = t.text;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>templateName.textContent = t.name;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>async function startCamera() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (stream) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>stream.getTracks().forEach(track =&gt; track.stop());</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>stream = await navigator.mediaDevices.getUserMedia({</p>
+<p class="p1"><span class="Apple-converted-space">          </span>video: {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>facingMode: useBackCamera ? { ideal: "environment" } : "user",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: { ideal: 1920 },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: { ideal: 1080 }</p>
+<p class="p1"><span class="Apple-converted-space">          </span>},</p>
+<p class="p1"><span class="Apple-converted-space">          </span>audio: false</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>video.srcObject = stream;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>startCameraBtn.textContent = "Kamera Aktif";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert("Kamera tidak dapat diakses. Pastikan izin kamera aktif dan halaman dibuka melalui HTTPS atau localhost.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>console.error(error);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function capturePhoto() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!video.videoWidth) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert("Aktifkan kamera terlebih dahulu.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>canvas.width = video.videoWidth;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>canvas.height = video.videoHeight;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>ctx.drawImage(video, 0, 0, canvas.width, canvas.height);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Watermark nama template pada hasil dokumentasi</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ctx.fillStyle = "rgba(0, 0, 0, 0.55)";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ctx.fillRect(20, canvas.height - 95, 430, 65);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>ctx.fillStyle = "#ffffff";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ctx.font = "bold 28px Arial";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>ctx.fillText(`Dental View: ${templates[viewType.value].name}`, 35, canvas.height - 55);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>photoData = canvas.toDataURL("image/jpeg", 0.95);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>result.src = photoData;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>preview.style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function downloadPhoto() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!photoData) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert("Ambil foto terlebih dahulu.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const link = document.createElement("a");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const now = new Date().toISOString().replace(/[:.]/g, "-");</p>
+<p class="p1"><span class="Apple-converted-space">      </span>link.download = `dental-${viewType.value}-${now}.jpg`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>link.href = photoData;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>link.click();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>async function enableLevel() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (typeof DeviceOrientationEvent !== "undefined" &amp;&amp;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>typeof DeviceOrientationEvent.requestPermission === "function") {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>await DeviceOrientationEvent.requestPermission();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} catch (e) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>console.log("Sensor orientasi tidak diizinkan.");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.addEventListener("deviceorientation", (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (event.gamma === null) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tilt = Math.abs(event.gamma);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (tilt &lt; 4) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>levelStatus.innerHTML = 'Kemiringan: &lt;strong&gt;Sejajar&lt;/strong&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>levelStatus.innerHTML = `Kemiringan: &lt;strong&gt;${tilt.toFixed(0)}°&lt;/strong&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>startCameraBtn.addEventListener("click", async () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>await enableLevel();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>startCamera();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>switchCameraBtn.addEventListener("click", () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>useBackCamera = !useBackCamera;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>startCamera();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>captureBtn.addEventListener("click", capturePhoto);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>downloadBtn.addEventListener("click", downloadPhoto);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>viewType.addEventListener("change", updateGuide);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>updateGuide();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
